@@ -1,11 +1,22 @@
 import Link from 'next/link';
-import NavItem from './NavItem';
 
-// TODO: things for Nav
-// 1. Flex box style
-// 2. general styles
+type Props = {
+  name: string;
+  link: string;
+};
 
-export default function Nav() {
+function NavItem({ name, link }: Props) {
+  const nameUpper = name.toUpperCase();
+  return (
+    <Link href={link}>
+      <h4 className="nav-item">
+        {nameUpper}
+      </h4>
+    </Link>
+  );
+}
+
+export default function Header() {
   return (
     <header>
       <Link href="/">
