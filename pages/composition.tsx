@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from 'next';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ProjectInfo } from '../lib';
+import { ProjectPage } from '../component';
 
 export async function getStaticProps() {
   const dataPath = join(process.cwd(), 'data/comp.json');
@@ -18,7 +19,5 @@ export async function getStaticProps() {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Composition({ projectInfo }: Props) {
-  return (
-    <p>Composition Page Works!</p>
-  );
+  return <ProjectPage data={projectInfo} />;
 }
