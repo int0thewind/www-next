@@ -7,7 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav />
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
       <Footer />
     </>
   );
