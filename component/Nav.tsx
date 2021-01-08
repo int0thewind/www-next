@@ -7,13 +7,12 @@ import NavItem from './NavItem';
 
 export default function Nav() {
   return (
-    <header className="nav-header">
+    <header>
       <Link href="/">
         <h1 className="nav-title">Hanzhi Yin</h1>
       </Link>
       <hr />
       <nav className="nav">
-        {/* <NavItem name="bio" link="/bio" /> */}
         <NavItem name="composition" link="/composition" />
         <NavItem name="code" link="/code" />
         <NavItem name="CV" link="/cv" />

@@ -32,6 +32,7 @@ $color-primary: $color-primary-light;
 $color-secondary: $color-secondary-light;
 
 $max-width: 960px;
+$margin: 4px;
 
 // @media screen and (prefers-color-scheme: dark) {
 //   $background: $dark-background;
@@ -45,15 +46,13 @@ $max-width: 960px;
 Global definition
 ********************************/
 
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: $font-family;
-}
-
 body {
+  padding: $margin * 2;
+  font-family: $font-family;
   background-image: $background;
   background-repeat: repeat;
+  max-width: $max-width;
+  margin: auto;
 }
 
 h1, h2, h3, h4, h5, h6, a, p {
@@ -68,13 +67,9 @@ a {
 Nav NavItem component definitions
 ********************************/
 
-.nav-header {
-  max-width: $max-width;
-  margin: auto;
-}
-
 .nav-title {
   text-align: center;
+  cursor: pointer;
 }
 
 .nav {
@@ -84,11 +79,26 @@ Nav NavItem component definitions
   justify-content: space-around;
 }
 
-.nav-item {
-  transition: color 0.2s ease-in-out;
-}
-
-.nav-item-highlight {
+.nav-item:hover {
   color: $color-primary;
   background-color: $color-background;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/********************************
+Footer component definitions
+********************************/
+
+.footer-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-icon {
+  margin-left: $margin * 2;
+  margin-right: $margin * 2;
+  cursor: pointer;
 }
