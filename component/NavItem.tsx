@@ -9,9 +9,9 @@ export default function NavItem({ name, link }: Props) {
   const nameUpper = name.toUpperCase();
   return (
     <Link href={link}>
-      <p className="nav-item">
+      <h4 className="nav-item">
         {nameUpper}
-      </p>
+      </h4>
     </Link>
   );
 }
