@@ -105,3 +105,20 @@ Footer component definitions
 /********************************
 Project Page component definitions
 ********************************/
+
+.project-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($max-width / 2, $max-width * 2 / 3));
+}
+
+.project-card {
+  box-shadow: 1px 1px 1px 1px $color-black;
+  background-color: $color-white;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
