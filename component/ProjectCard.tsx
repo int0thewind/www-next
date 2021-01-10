@@ -42,11 +42,7 @@ export default function ProjectCard({ data }: ProjectCardProps) {
       <>
         <h5>Collaborators</h5>
         <ul>
-          {colab.map(({ name, contact }) => (
-            <li key={name}>
-              {`${name}: ${contact}`}
-            </li>
-          ))}
+          {colab.map(({ name, contact }) => <li key={name}>{`${name}: ${contact}`}</li>)}
         </ul>
       </>
       )}
