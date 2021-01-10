@@ -32,6 +32,7 @@ $color-primary: $color-primary-light;
 $color-secondary: $color-secondary-light;
 
 $max-width: 960px;
+$min-width: 375px;
 $margin: 4px;
 
 // @media screen and (prefers-color-scheme: dark) {
@@ -108,7 +109,7 @@ Project Page component definitions
 
 .project-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($max-width / 2, $max-width * 2 / 3));
+  grid-template-columns: repeat(auto-fit, minmax($min-width, $max-width / 2));
 }
 
 .project-card {
@@ -121,4 +122,23 @@ Project Page component definitions
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+/********************************
+Button and Pill component definitions
+********************************/
+
+.pill {
+  color: $color-text;
+  font-size: 12pt;
+  font-weight: 400;
+  border-radius: 10%;
+}
+
+.pill-primary {
+  background-color: $color-primary;
+}
+
+.pill-secondary {
+  background-color: $color-secondary;
 }
