@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, Chip } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import Tag from './Tag';
 import { ProjectInfo } from '../lib';
 
 type ProjectCardProps = {
@@ -19,31 +20,9 @@ export default function ProjectCard({ data }: ProjectCardProps) {
     <div className="project-card">
       <h2>{title}</h2>
       <div className="project-card-tags-container">
-        <Chip
-          color="primary"
-          size="small"
-          label={dateString}
-          variant="outlined"
-          className="project-card-tag"
-        />
-        {!isMain || (
-        <Chip
-          color="secondary"
-          size="small"
-          label="Major Work"
-          variant="outlined"
-          className="project-card-tag"
-        />
-        )}
-        {tags.map((tag) => (
-          <Chip
-            key={tag}
-            size="small"
-            label={tag}
-            variant="outlined"
-            className="project-card-tag"
-          />
-        ))}
+        <Tag color="primary" label={dateString} />
+        {!isMain || <Tag color="secondary" label="Major Work" />}
+        {tags.map((tag) => <Tag key={tag} color="default" label={tag} />)}
       </div>
       <p>
         {displayDesc ? desc : shortDesc}
