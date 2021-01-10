@@ -53,7 +53,6 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 a {
-  text-decoration: none;
   cursor: pointer;
 }
 
@@ -85,7 +84,6 @@ Nav NavItem component definitions
 .nav-item:hover {
   color: $color-primary;
   background-color: $color-background;
-  // cursor: pointer;
 }
 
 /********************************
@@ -102,7 +100,6 @@ Footer component definitions
 .footer-icon {
   margin-left: $margin * 2;
   margin-right: $margin * 2;
-  // cursor: pointer;
 }
 
 /********************************
@@ -117,10 +114,10 @@ Project Page component definitions
 }
 
 .project-card {
-  box-shadow: 1px 1px 1px 1px $color-text;
+  box-shadow: 2px 2px 5px $color-text;
   background-color: $color-white;
   padding: $margin * 2;
-  margin: $margin;
+  margin: $margin * 2;
   width: 90%;
 }
 
@@ -153,10 +150,10 @@ Project Page component definitions
 }
 
 .project-card-button {
-  // border: none;
-  // background-color: none;
+  margin: $margin;
+  float: right;
 }
 
 .project-card-link {
-  
+  margin: $margin;
 }

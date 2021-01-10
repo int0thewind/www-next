@@ -32,6 +32,7 @@ export default function ProjectCard({ data }: ProjectCardProps) {
       </button>
       {Object.keys(links).map((key) => (
         <Link key={key} href={links[key]}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a target="_blank" rel="noreferrer" className="project-card-link">
             {key}
           </a>
