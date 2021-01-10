@@ -1,13 +1,14 @@
 import { InferGetStaticPropsType } from 'next';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { ProjectInfo } from '../lib';
+import { ProjectInfo, ProjectSort } from '../lib';
 import { ProjectCard } from '../component';
 
 export async function getStaticProps() {
   const dataPath = join(process.cwd(), 'data/comp.json');
   const dataContent = readFileSync(dataPath, 'utf-8');
   const projectInfo: ProjectInfo[] = JSON.parse(dataContent);
+  projectInfo.sort(ProjectSort);
   return {
     props: {
       projectInfo,

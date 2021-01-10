@@ -1,7 +1,6 @@
 import { useState } from 'react';
+import { Button, Chip } from '@material-ui/core';
 import { ProjectInfo } from '../lib';
-import Pill from './Pill';
-import Button from './Button';
 
 type ProjectCardProps = {
   data: ProjectInfo;
@@ -19,23 +18,52 @@ export default function ProjectCard({ data }: ProjectCardProps) {
   return (
     <div className="project-card">
       <h2>{title}</h2>
-      <div className="project-card-tags">
-        <Pill color="secondary">{dateString}</Pill>
-        {!isMain || <Pill color="primary">Major Work</Pill>}
-        {tags.map((tag) => <Pill key={tag}>{tag}</Pill>)}
+      <div className="project-card-tags-container">
+        <Chip
+          color="primary"
+          size="small"
+          label={dateString}
+          variant="outlined"
+          className="project-card-tag"
+        />
+        {!isMain || (
+        <Chip
+          color="secondary"
+          size="small"
+          label="Major Work"
+          variant="outlined"
+          className="project-card-tag"
+        />
+        )}
+        {tags.map((tag) => (
+          <Chip
+            size="small"
+            label={tag}
+            variant="outlined"
+            className="project-card-tag"
+          />
+        ))}
       </div>
       <p>
         {displayDesc ? desc : shortDesc}
       </p>
-      <Button onClick={toggleDisplayDesc} variant="link" sm>
-        {displayDesc ? 'Collapse' : 'Expand'}
+      <Button onClick={toggleDisplayDesc} size="small" variant="text">
+        {displayDesc ? 'Show Less' : 'Show More'}
       </Button>
-      {Object.keys(links).map((key) => <Button key={key} href={links[key]} variant="link">{key}</Button>)}
+      {Object.keys(links).map((key) => (
+        <Button key={key} href={links[key]} size="small" variant="text">
+          {key}
+        </Button>
+      ))}
       {!colab.length || (
       <>
         <h5>Collaborators</h5>
         <ul>
-          {colab.map(({ name, contact }) => <li key={name}>{`${name}: ${contact}`}</li>)}
+          {colab.map(({ name, contact }) => (
+            <li key={name}>
+              {`${name}: ${contact}`}
+            </li>
+          ))}
         </ul>
       </>
       )}

@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
 export type { default as ProjectInfo } from './ProjectInfo';
+export { default as ProjectSort } from './ProjectSort';
