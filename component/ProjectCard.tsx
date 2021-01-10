@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@material-ui/core';
+import Link from 'next/link';
 import Tag from './Tag';
 import { ProjectInfo } from '../lib';
 
@@ -27,13 +27,15 @@ export default function ProjectCard({ data }: ProjectCardProps) {
       <p>
         {displayDesc ? desc : shortDesc}
       </p>
-      <Button onClick={toggleDisplayDesc} size="small" variant="text">
+      <button type="button" onClick={toggleDisplayDesc} className="project-card-button">
         {displayDesc ? 'Show Less' : 'Show More'}
-      </Button>
+      </button>
       {Object.keys(links).map((key) => (
-        <Button key={key} href={links[key]} size="small" variant="text">
-          {key}
-        </Button>
+        <Link key={key} href={links[key]}>
+          <a target="_blank" rel="noreferrer" className="project-card-link">
+            {key}
+          </a>
+        </Link>
       ))}
       {!colab.length || (
       <>

@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 /********************************
@@ -84,7 +85,7 @@ Nav NavItem component definitions
 .nav-item:hover {
   color: $color-primary;
   background-color: $color-background;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 /********************************
@@ -101,7 +102,7 @@ Footer component definitions
 .footer-icon {
   margin-left: $margin * 2;
   margin-right: $margin * 2;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 /********************************
@@ -149,4 +150,13 @@ Project Page component definitions
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.project-card-button {
+  // border: none;
+  // background-color: none;
+}
+
+.project-card-link {
+  
 }
