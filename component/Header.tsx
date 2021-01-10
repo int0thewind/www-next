@@ -26,7 +26,7 @@ export default function Header() {
       <nav className="nav">
         <NavItem name="composition" link="/composition" />
         <NavItem name="code" link="/code" />
-        <NavItem name="CV" link="/cv" />
+        <NavItem name="CV" link="/resume.pdf" />
       </nav>
       <hr />
     </header>
