@@ -81,6 +81,15 @@ Nav NavItem component definitions
   justify-content: space-around;
 }
 
+.nav-item {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
 .nav-item:hover {
   color: $color-primary;
   background-color: $color-background;

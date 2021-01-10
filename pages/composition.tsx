@@ -22,7 +22,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 export default function Composition({ projectInfo }: Props) {
   return (
     <div className="project-page">
-      {projectInfo.map((d) => <ProjectCard data={d} />)}
+      {projectInfo.map((d) => <ProjectCard key={d.id} data={d} />)}
     </div>
   );
 }

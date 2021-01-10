@@ -1,32 +1,31 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
-
-type Props = {
-  name: string;
-  link: string;
-};
-
-function NavItem({ name, link }: Props) {
-  const nameUpper = name.toUpperCase();
-  return (
-    <Link href={link}>
-      <h4 className="nav-item">
-        {nameUpper}
-      </h4>
-    </Link>
-  );
-}
 
 export default function Header() {
   return (
     <header>
       <Link href="/">
-        <h1 className="nav-title">Hanzhi Yin</h1>
+        <h1 className="nav-title">
+          Hanzhi Yin
+        </h1>
       </Link>
       <hr />
       <nav className="nav">
-        <NavItem name="composition" link="/composition" />
-        <NavItem name="code" link="/code" />
-        <NavItem name="CV" link="/resume.pdf" />
+        <Link href="/composition">
+          <a className="nav-item" rel="noreferrer">
+            COMPOSITION
+          </a>
+        </Link>
+        <Link href="/code">
+          <a className="nav-item" rel="noreferrer">
+            CODE
+          </a>
+        </Link>
+        <Link href="/resume.pdf">
+          <a className="nav-item" target="_blank" rel="noreferrer">
+            CV
+          </a>
+        </Link>
       </nav>
       <hr />
     </header>

@@ -37,6 +37,7 @@ export default function ProjectCard({ data }: ProjectCardProps) {
         )}
         {tags.map((tag) => (
           <Chip
+            key={tag}
             size="small"
             label={tag}
             variant="outlined"
