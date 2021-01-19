@@ -5,7 +5,7 @@ import { ProjectInfo, ProjectSort } from '../lib';
 import { ProjectCard } from '../component';
 
 export async function getStaticProps() {
-  const dataPath = join(process.cwd(), 'data/comp.json');
+  const dataPath = join(process.cwd(), 'lib/comp.json');
   const dataContent = readFileSync(dataPath, 'utf-8');
   const projectInfo: ProjectInfo[] = JSON.parse(dataContent);
   projectInfo.sort(ProjectSort);

@@ -11,6 +11,7 @@ export default function Index() {
         width={IMAGE_SIZE}
         height={IMAGE_SIZE}
         layout="intrinsic"
+        className="avatar"
       />
       <article>
         <p>
