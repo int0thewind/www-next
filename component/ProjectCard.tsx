@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Tag from './Tag';
-import { ProjectInfo } from '../lib';
+import { ProjectInfo } from './types';
 
 type ProjectCardProps = {
   data: ProjectInfo;

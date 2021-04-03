@@ -21,7 +21,7 @@ export default function Header() {
             CODE
           </a>
         </Link>
-        <Link href="/resume.pdf">
+        <Link href="https://int0thewind-default.s3.us-east-2.amazonaws.com/resume.pdf">
           <a className="nav-item" target="_blank" rel="noreferrer">
             CV
           </a>

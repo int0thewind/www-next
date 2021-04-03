@@ -1,19 +1,16 @@
 import { InferGetStaticPropsType } from 'next';
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import { ProjectInfo, ProjectSort } from '../lib';
+import { ProjectInfo, ProjectSort } from '../component/types';
 import { ProjectCard } from '../component';
 
 export async function getStaticProps() {
-  const dataPath = join(process.cwd(), 'lib/comp.json');
-  const dataContent = readFileSync(dataPath, 'utf-8');
-  const projectInfo: ProjectInfo[] = JSON.parse(dataContent);
+  const data = await fetch('https://int0thewind-default.s3.us-east-2.amazonaws.com/proj-info/comp.json');
+  const projectInfo: ProjectInfo[] = await data.json();
   projectInfo.sort(ProjectSort);
   return {
     props: {
       projectInfo,
     },
-    revalidate: 30,
+    revalidate: 600,
   };
 }
 
